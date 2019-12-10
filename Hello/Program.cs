@@ -6,7 +6,7 @@ namespace Hello
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Dupsko");
+            Console.WriteLine("Witaj Świecie!");
         }
     }
 }
