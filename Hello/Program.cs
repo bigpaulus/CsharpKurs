@@ -14,13 +14,9 @@ namespace Hello
                 Age();
                 Settings();
 
-
-
                 //foreach (var item in args)
                 //{
-
                 //    Console.WriteLine("Witaj!" + item);
-
                 //}
             }
         }
@@ -67,8 +63,7 @@ namespace Hello
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Wprowadziłeś niepoprawny wiek, wpisz ponownie w postaci liczby!");
             }
-
-
+            
             else
             {
                 Console.ForegroundColor = ConsoleColor.Green;
