@@ -16,25 +16,22 @@ namespace StudentDiary
             ratings.Add(rating);
         }
 
-        public float CalculateAverage()
+        internal DiaryStatistics ComputerStatistics()
         {
-            float sum = 0, avg = 0;
+            DiaryStatistics stats = new DiaryStatistics();
+            float sum = 0f;
+
             foreach (var rating in ratings)
             {
                 sum = sum + rating;
             }
 
-            avg = sum / ratings.Count();
-            return avg;
-        }
+            stats.AverageGrade = sum / ratings.Count();
+            stats.MaxGrade = ratings.Max();
+            stats.MinGrade = ratings.Min();
 
-        public float GiveMaxRating()
-        {
-            return ratings.Max();
-        }
-        public float GiveMinRating()
-        {
-            return ratings.Min();
+            return stats;
+        
         }
     }
 }
