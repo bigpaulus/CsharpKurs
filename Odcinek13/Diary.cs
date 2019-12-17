@@ -11,11 +11,16 @@ using System.Linq;
             public Diary()
             {
                 ratings = new List<float>();
+            Count = Count + 1;
             }
 
 
             //Stan (zmienne - pola)
             List<float> ratings;
+
+        public static float MinGrade = 0;
+        public static float MaxGrade = 10;
+        public static long Count = 0;
 
             //Zachowania klasy
             public void AddRating(float rating)

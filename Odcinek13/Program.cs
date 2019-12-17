@@ -15,6 +15,17 @@ namespace Odcinek13
             diary.AddRating(5f);
             diary.AddRating(8.4f);
 
+            Console.WriteLine(Diary.MaxGrade);
+
+            Diary diary2 = new Diary(); 
+            Diary diary3 = new Diary(); 
+            Diary diary4 = new Diary(); 
+            Diary diary5 = new Diary(); 
+            Diary diary6 = new Diary();
+
+            Console.WriteLine(Diary.Count);
+
+
             DiaryStatistics stats = diary.Computerstatistics();
            
             
