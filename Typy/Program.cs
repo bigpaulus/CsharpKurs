@@ -34,7 +34,12 @@ namespace Typy
             d1 = new Diary();
             d1.Name = "dzienniczek Marcina";
             Console.WriteLine(d1.Name);
-            
+
+            int x1 = 4;
+            int x2 = x1;
+            x1 = 100;
+            Console.WriteLine(x2);
+
         }
     }
 }
