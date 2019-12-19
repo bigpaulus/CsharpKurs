@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Speech.Synthesis;
 
 
 namespace StudentDiary
@@ -19,6 +20,9 @@ namespace StudentDiary
             Console.WriteLine("Średnia wartość:  " + stats.AverageGrade);
             Console.WriteLine("Maksymalna ocena:  " + stats.MaxGrade);
             Console.WriteLine("Minimalna ocena:  " + stats.MinGrade);
+
+            //SpeechSynthesizer synt = new SpeechSynthesizer();
+            //synt.Speak("Cześć Marcin");
         }
     }
 }
