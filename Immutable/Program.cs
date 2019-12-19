@@ -19,9 +19,14 @@ namespace Immutable
         {
             Console.BackgroundColor = ConsoleColor.Green;
             string name = "     Marcin     ";
-            
             name = name.Trim();
             Console.WriteLine(name);
+
+            DateTime date = new DateTime(2019,12,18);
+            date = date.AddDays(3);
+            Console.WriteLine(date);
+
+
 
             Console.ReadKey();
         }
