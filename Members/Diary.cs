@@ -4,19 +4,48 @@ using System.Linq;
 
 
 namespace Members
+
+
 {
-    class Diary
+    public class Diary
     {
+        public Diary()
+        {
+            ratings = new List<float>();
+        }
         //Stan (zmienne - pola)
-        List<float> ratings = new List<float>();
+        private List<float> ratings;
+
+        private string _name;
+
+        public string Name
+        {
+            get
+            {
+                return _name.ToUpper();
+            }
+
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
+
 
         //Zachowania klasy
         public void AddRating(float rating)
         {
-            ratings.Add(rating);
+            if (rating >= 0 && rating <= 10)
+            {
+                ratings.Add(rating);
+            }
         }
 
-        internal DiaryStatistics ComputerStatistics()
+
+        public DiaryStatistics Computerstatistics()
         {
             DiaryStatistics stats = new DiaryStatistics();
             float sum = 0f;
@@ -31,7 +60,6 @@ namespace Members
             stats.MinGrade = ratings.Min();
 
             return stats;
-        
         }
     }
 }
