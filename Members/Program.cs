@@ -11,50 +11,35 @@ namespace Members
         {
             Diary diary = new Diary();
 
-            diary.AddRating(5);
-            diary.AddRating(8.5f);
-            diary.AddRating(4.7f);
-
-
-            //DiaryStatistics stats = diary.ComputerStatistics();
-
-            //WriteResult("Average", stats.AverageGrade, 3,5,7,8,9);
-            //WriteResult("Max", (int)stats.MaxGrade);
-            //WriteResult("Min", (long)stats.MinGrade);
-            //WriteResult("Min", stats.MinGrade, 1);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged2);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged3);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged4);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged4);
+            diary.NameChanged += new NameChangedDelegate(OnNameChanged4);
 
             diary.Name = "Dzienniczek Marcina";
-            diary.Name = "";
-            diary.Name = null;
+            diary.Name = "Jacek Hej";
+
             Console.WriteLine(diary.Name);
 
         }
 
-        static void WriteResult(string description, params float[] result)
+        private static void OnNameChanged(string existingname, string newName)
         {
-
-            Console.WriteLine(description + ": " + result[0] + "  " + result[4]);
-
+            Console.WriteLine($"Zmiana nazwy z {existingname} na {newName}");
         }
-        static void WriteResult(string description, int result)
+        private static void OnNameChanged2(string existingname, string newName)
         {
-
-            Console.WriteLine(description + ": " + result);
-
+            Console.WriteLine("*****************");
         }
-        static void WriteResult(string description, long result)
+        private static void OnNameChanged3(string existingname, string newName)
         {
-
-            Console.WriteLine(description + ": " + result);
-
+            Console.WriteLine("Hello!");
         }
-        static void WriteResult(string description, float result, long test)
+        private static void OnNameChanged4(string existingname, string newName)
         {
-
-            Console.WriteLine($"{description}: {result:F3}: {2}: {3}: {4}: {5}");
-
+            Console.WriteLine("*****************");
         }
-
-
     }
 }
