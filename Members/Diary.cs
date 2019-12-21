@@ -27,25 +27,30 @@ namespace Members
 
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
-                    if (_name != value)
-                    {
-                        NameChangedEventArgs args = new NameChangedEventArgs();
-                        args.EgsistingName = _name;
-                        args.NewName = value;
+                    throw new ArgumentNullException("Nazwa nie może być pusta");
 
 
-                        NameChanged(this, args);
-                    }
+                        }
 
-                    _name = value;
+                if (_name != value && NameChanged != null)
+                {
+                    NameChangedEventArgs args = new NameChangedEventArgs();
+                    args.EgsistingName = _name;
+                    args.NewName = value;
+
+
+                    NameChanged(this, args);
                 }
+
+                _name = value;
+
             }
         }
 
         //Delegate
-        public  event NameChangedDelegate NameChanged;
+        public event NameChangedDelegate NameChanged;
 
         //Zachowania klasy
         public void AddRating(float rating)

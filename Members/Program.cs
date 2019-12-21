@@ -1,5 +1,8 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
 
@@ -11,16 +14,45 @@ namespace Members
         {
             Diary diary = new Diary();
 
-            diary.NameChanged +=  OnNameChanged;
-            diary.NameChanged +=  OnNameChanged2;
-            diary.NameChanged +=  OnNameChanged3;
-            diary.NameChanged +=  OnNameChanged4;
-            diary.NameChanged +=  OnNameChanged4;
-            diary.NameChanged +=  OnNameChanged4;
+
+            try
+            {
+
+                Console.WriteLine("Prosze podać imię: ");
+                diary.Name = Console.ReadLine();
+            }
+            
+            catch (ArgumentException ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            catch (NullReferenceException)
+            {
+
+                Console.WriteLine("Coś poszło nie tak..");
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+            diary.NameChanged += OnNameChanged;
+            diary.NameChanged += OnNameChanged2;
+            diary.NameChanged += OnNameChanged3;
+            diary.NameChanged += OnNameChanged4;
+            diary.NameChanged += OnNameChanged4;
+            diary.NameChanged += OnNameChanged4;
             diary.NameChanged += OnNameChanged4;
             diary.NameChanged -= OnNameChanged4;
             diary.NameChanged -= OnNameChanged4;
             diary.NameChanged -= OnNameChanged4;
+
+          
+
 
             diary.Name = "Dzienniczek Marcina";
             diary.Name = "Jacek Hej";
