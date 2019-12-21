@@ -28,7 +28,7 @@ namespace FlowControl
 
             //}
 
-            int i = 1;
+            //int i = 1;
             //while (i > 3)
 
             //{
@@ -49,17 +49,69 @@ namespace FlowControl
             //    Console.WriteLine(item);
             //}
 
-            for (; ; )
-            {
-                Console.WriteLine("Podaj Imię:");
-                string text = Console.ReadLine();
-                Console.WriteLine("Masz na imię {0} ", text);
-            }
+            //for (; ; )
+            //{
+            //    Console.WriteLine("Podaj Imię:");
+            //    string text = Console.ReadLine();
+            //    Console.WriteLine("Masz na imię {0} ", text);
+            //}
+
+            int[] ages = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //foreach (var age in ages)
+            //{
+            //    if (age == 2)
+            //    {
+            //        Console.WriteLine("Wiek wynosi: {0}", age);
+            //            continue;
+            //        Console.WriteLine("Hello");
 
 
+            //    }
+            //    if (age == 4)
+            //    {
+            //        Console.WriteLine("Wiek wynosi: {0}", age);
+            //            break;
+            //        Console.WriteLine("Hello");
+            //    }
+
+            //}
+
+            //foreach (var age in ages)
+            //{
+            //    if (age == 2)
+            //    {
+            //        Console.WriteLine("Wiek wynosi: {0}", age);
+            //        goto skip;
+            //        Console.WriteLine("Hello");
+
+
+            //    }
+
+
+            //}
+
+            ////jakiś kod
+
+            //skip:
+            //Console.WriteLine("Hello!");
+
+            checkage(ages);
 
             Console.ReadKey();
+            
+        }
 
+        private static void checkage(int[] ages)
+        {
+            foreach (var agem in ages)
+            {
+                if (age == 3)
+                {
+                    Console.WriteLine("Wiek wynosi: {0}",age);
+                    return;
+                }
+
+            }
         }
 
         private static void InstructionSwitch()
